@@ -1,0 +1,128 @@
+Documentacion de los servicios
+
+
+//////////////////////////////////////////////
+
+VENDEDOR
+
+///////////////////////////////////////////////
+NOMBRE: registrar vendedor
+URL: vendedor/registrar
+TIPO: post
+ENTRADA:
+	{
+	    "vendedor":{
+	    },
+	    "firma":""
+	}
+SALIDA:
+	{
+ 		"status": ""
+ 	}
+//////////////////////////////////////////////
+NOMBRE: iniciar sesion
+URL: vendedor/verificar
+TIPO: post
+ENTRADA:
+	{
+		"vendedor":{
+			"codigo":"",
+			"pass":""
+		}
+	}
+SALIDA:
+	{
+ 		"status": "",
+ 		"token":"hash"
+	}
+///////////////////////////////////////////////
+
+SESION
+
+//////////////////////////////////////////////
+NOMBRE: Agendar sesiones
+URL: /sesion/agendar
+TIPO: post
+ENTRADA:
+	{
+	    "sesion":{
+	    	"fecha":"",
+			"hora":"",
+			"lugar":"",
+			"anfitrion":"",
+	    },
+		"firma": "hash"
+	}
+SALIDA:
+	{
+		"status":""
+	}
+///////////////////////////////////////////////
+
+
+NOMBRE: modificar sesiones
+URL: sesion/modificar
+TIPO: put
+ENTRADA:
+	{
+	    "sesion":{
+	    	"id":"",
+	    	"fecha":"",
+			"hora":"",
+			"lugar":"",
+			"anfitrion":"",
+    	},
+		"firma": "hash"
+	}
+SALIDA:
+	{
+		"status": ""
+	}
+
+///////////////////////////////////////////////
+
+
+NOMBRE: agendar clientes
+URL: sesion/cliente/agendar
+TIPO: post
+ENTRADA:
+	{
+		"sesion":"",
+		"cliente":[],
+		"firma": "hash"
+	}
+SALIDA:
+	{
+		"status": ""
+	}
+
+	///////////////////////////////////////////////
+
+
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+	///////////////////////////////////////////////
+
+
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+	///////////////////////////////////////////////
+
+
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+	
+
+
+
+
+
