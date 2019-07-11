@@ -6,40 +6,41 @@ Documentacion de los servicios
 VENDEDOR
 
 ///////////////////////////////////////////////
+ID:s_1
 NOMBRE: registrar vendedor
 URL: vendedor/registrar
 TIPO: post
 ENTRADA:
 	{
 	    "vendedor":{
-	    },
-	    "firma":""
+	    }
 	}
 SALIDA:
 	{
  		"status": ""
  	}
 //////////////////////////////////////////////
+ID:s_2
 NOMBRE: iniciar sesion
 URL: vendedor/verificar
 TIPO: post
 ENTRADA:
 	{
-		"vendedor":{
-			"codigo":"",
-			"pass":""
-		}
+		
+		"codigo":"",
+		"pass":""
 	}
 SALIDA:
 	{
  		"status": "",
- 		"token":"hash"
+ 		"jwt":"hash"
 	}
 ///////////////////////////////////////////////
 
 SESION
 
 //////////////////////////////////////////////
+ID:s_3
 NOMBRE: Agendar sesiones
 URL: /sesion/agendar
 TIPO: post
@@ -50,8 +51,7 @@ ENTRADA:
 			"hora":"",
 			"lugar":"",
 			"anfitrion":"",
-	    },
-		"firma": "hash"
+	    }
 	}
 SALIDA:
 	{
@@ -59,7 +59,7 @@ SALIDA:
 	}
 ///////////////////////////////////////////////
 
-
+ID:s_4
 NOMBRE: modificar sesiones
 URL: sesion/modificar
 TIPO: put
@@ -71,8 +71,7 @@ ENTRADA:
 			"hora":"",
 			"lugar":"",
 			"anfitrion":"",
-    	},
-		"firma": "hash"
+    	}
 	}
 SALIDA:
 	{
@@ -81,15 +80,15 @@ SALIDA:
 
 ///////////////////////////////////////////////
 
-
-NOMBRE: agendar clientes
-URL: sesion/cliente/agendar
+ID:s_5
+NOMBRE: agregar cliente
+URL: cliente/agregar
 TIPO: post
 ENTRADA:
 	{
-		"sesion":"",
-		"cliente":[],
-		"firma": "hash"
+		"cliente":{
+
+		}
 	}
 SALIDA:
 	{
@@ -99,28 +98,120 @@ SALIDA:
 	///////////////////////////////////////////////
 
 
-NOMBRE:
-URL:
-TIPO:
+ID:s_6
+NOMBRE: agendar clientes
+URL: sesion/cliente/agendar
+TIPO: post
 ENTRADA:
+	{
+		"sesion":"",
+		"clientes":[]
+	}
 SALIDA:
+	{
+		"status": ""
+	}
 	///////////////////////////////////////////////
 
-
-NOMBRE:
-URL:
-TIPO:
+ID:s_7
+NOMBRE: crear catalogo de productos
+URL: /catalogo/crear
+TIPO: post
 ENTRADA:
+	{
+		"catalogo":{
+
+		}
+	}
 SALIDA:
-	///////////////////////////////////////////////
+///////////////////////////////////////////////
 
-
-NOMBRE:
-URL:
-TIPO:
+ID:s_8
+NOMBRE: agregar productos
+URL:/producto/agregar
+TIPO:post
 ENTRADA:
+	{
+		"producto":{
+
+		}
+	}
 SALIDA:
 	
+///////////////////////////////////////////////
+
+ID:s_9
+NOMBRE: modificar productos
+URL: /producto/modificar
+TIPO: post
+ENTRADA:
+	{
+		"producto":{
+			"id":""
+		}
+	}
+SALIDA:
+
+///////////////////////////////////////////////
+
+ID:s_10
+NOMBRE: listar productos por catalogo
+URL: /catalogo/producto/listar
+TIPO: get
+ENTRADA:
+	{
+		"catalogo":""
+	}
+SALIDA:
+	{
+		"status":"",
+		"productos":[]
+	}
+
+///////////////////////////////////////////////
+
+ID:
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+
+///////////////////////////////////////////////
+
+ID:
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+
+///////////////////////////////////////////////
+
+ID:
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+
+///////////////////////////////////////////////
+
+ID:
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
+
+///////////////////////////////////////////////
+
+ID:
+NOMBRE:
+URL:
+TIPO:
+ENTRADA:
+SALIDA:
 
 
 

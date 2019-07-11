@@ -8,7 +8,7 @@ servicios = {
 	's_3':{
 		'ruta':'/sesion/agendar'
 	}
-}
+} 
 
 def ruta(servicio):
 	return servicios[servicio]['ruta']
