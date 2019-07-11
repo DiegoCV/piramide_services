@@ -1,33 +1,37 @@
 from flask import Flask, request, abort, jsonify, make_response
-from util.Firma import * 
-import jwt
-firma = Firma()
-
-def validar_request(mi_request):
-    return 1
+from util.Validador import validar,token_required
+from util.Pregonero import * 
+from servicios import ruta
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'No vives de ensalada'
 
-@app.route('/vendedor/registrar', methods=['POST'])
+@app.route(ruta('s_1'), methods=['GET'])
 def registrarVendedor():
-    rta = validar_request(request)
-    if not rta == 1:
-        abort(rta)
+    if validar(ruta('s_1'),request):
+        #Aqui deberia ir el llamado al controlador
+        return reponder()
     else:
-        print(request.json['firma'])
-    return jsonify(request.json)
+        return responderError()
 
-@app.route('/a')
-def hellof():
-    encoded = jwt.encode({'some': 'payload'}, 'secret', algorithm='HS256')
-    return jsonify(jwt.decode(encoded, 'secret', algorithms=['HS256']))
-    
-@app.route('/b', methods=['POST'])
-def hellofg():
-    if firma.verificar_firma(request.json['firma']):
-        return 'ok'
+@app.route(ruta('s_2'), methods=['GET'])
+def verificarVendedor():
+    if validar(ruta('s_2'),request):
+        #Aqui deberia ir el llamado al controlador
+        return reponder()
     else:
-        return 'nook'
-    
+        return responderError()
+
+#@validar Aqui deberiamos validar la estrucrura del json que llega
+@app.route(ruta('s_3'), methods=['GET'])
+@token_required
+def agendar_sesiones(vendedor,sesion):
+    if insertarSesion(vendedor,sesion):
+        #Aqui deberia ir el llamado al controlador
+        return reponder()
+    else:
+        return responderError()
+
+#Metodo ficticio, hay que reemplazar por el cintrolador
+def insertarSesion():
+    return 1
 app.run()
